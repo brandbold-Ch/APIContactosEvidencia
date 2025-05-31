@@ -32,11 +32,11 @@ class GroupSummaryDTO(BaseModel):
 class ContactDTO(BaseModel):
     id: UUID = Field(default_factory=lambda: uuid4())
     name: str
-    last_name: Optional[str]
-    business: Optional[str]
+    last_name: Optional[str] = None
+    business: Optional[str] = None
     phone_number: str = Field(max_length=10)
-    email: Optional[EmailStr]
-    birth_date: Optional[date]
+    email: Optional[EmailStr] = None
+    birth_date: Optional[date] = None
     group_ids: List[UUID] = []
     groups: List[GroupSummaryDTO] = []
 
